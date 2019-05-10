@@ -1,0 +1,369 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"Theme Duplicate": {
+		"prefix": "duplicate",
+		"body": [
+		"Hi!",
+		"I am closing this ticket as not approved since this is a copy of a theme that is already in the theme directory.",
+		"",
+		"If you meant to add this theme to your own website, please see https://wordpress.org/support/article/using-themes/#adding-new-themes",
+		"$0",
+		],
+		"description": "Close duplicate theme tickets."
+	},
+
+	"Too many issues": {
+		"prefix": "issues",
+		"body": [
+			"Hello,",
+			"I am closing this ticket because the theme has lots of issues.",
+			"Please go through the [https://make.wordpress.org/themes/handbook/review/required/ Theme Review Guideline] very carefully. Please fix your theme accordingly.",
+			"Reviewers are allowed to close the ticket if there are more than 3+ distinct issues.",
+			"If a ticket is closed with such 3+ issues, then your new theme update would have to go through the review queue again to get another round of review.",
+			"",
+			"To become more familiar with the Theme Review system, you can also start reviewing themes. [https://make.wordpress.org/themes/handbook/get-involved/become-a-reviewer/ Become a Reviewer]",
+			"",
+			"[https: //make.wordpress.org/themes/handbook/review/how-to-do-a-review-draft/ This link] may be helpful if you want to know about theme review in simplified words.",
+			"",
+			"If you have any questions regarding the guideline, you can ask here. I am happy to explain.",
+			"",
+			"== Important ==",
+			"Before re-submitting themes, please check the [https://make.wordpress.org/themes/handbook/review/required/ Theme Review Guidelines] very thoroughly.",
+			"Also, test your theme with following plugins:",
+			"* [https: //wordpress.org/plugins/theme-check/ Theme Check]",
+			"* [https://github.com/WPTRT/theme-sniffer/releases/download/0.1.5/theme-sniffer.0.1.5.zip Theme Sniffer]  - Errors need to be fixed and Warnings are things that need to be checked manually.",
+			"$0",
+		],
+		"description": "Too many issues."
+	},
+
+	"Missing license": {
+		"prefix": "missing license",
+		"body": [
+		"Themes are required to be 100% GPL compatible.",
+		"Reviewers can not confirm that a theme is GPL compatible unless all the license information is included in the theme.",
+		"Missing license information for:",
+		"(Placeholder: include additional information like a script name or image used in screenshot)",
+		"$0",
+		],
+		"description": "Missing license information for included assets."
+	},
+
+	"Missing copyright": {
+		"prefix": "missing copyright",
+		"body": [
+			"Themes are required to include a copyright statement for the theme itself.",
+			"Read more: https://make.wordpress.org/themes/2014/07/08/proper-copyrightlicense-attribution-for-themes/",
+			"$0",
+		],
+		"description": "Missing copyright information."
+	},
+
+	"PHP errors": {
+		"prefix": "php errors",
+		"body": [
+			"There should not be any PHP errors, warnings or notices.",
+			"(Placeholder: include the error messages here)",
+			"$0",
+		],
+		"description": "PHP errors."
+	},
+
+	"Theme sanitization": {
+		"prefix": "sanitize",
+		"body": [
+			"Validate and/or sanitize untrusted data before entering into the database.",
+			"(Suggested: Use a sanitizing function suitable for your type of content.)",
+			"(Suggested: Multichoice options like select lists and radio buttons must be validated.)",
+			"(Suggested: Escaping functions like esc_html must not be used as a santitize callback. The only exception is using esc_url_raw for links.)",
+			"(Placeholder: include the file name, line number and details here)",
+			"",
+			"Read more:",
+			"https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php",
+			"https://developer.wordpress.org/themes/theme-security/",
+			"$0",
+		],
+		"description": "Theme sanitization."
+	},
+
+	"Theme escaping": {
+		"prefix": "escaping",
+		"body": [
+			"All untrusted data should be escaped before output.",
+			"(Suggested: Theme options are not considered safe. Do not echo get_theme_mod without escaping.)",
+			"(Suggested: Make sure that the escaping functions are used correctly. Only use esc_attr inside HTML attributes. If you want to escape content between html tags, use esc_html.)",
+			"(Placeholder: include the file name, line number and details here)",
+			"",
+			"Read more:",
+			"https://developer.wordpress.org/themes/theme-security/",
+			"https://developer.wordpress.org/reference/functions/esc_attr/",
+			"https://developer.wordpress.org/reference/functions/esc_attr_e/",
+			"https://developer.wordpress.org/reference/functions/esc_attr__/",
+			"",
+			"https://developer.wordpress.org/reference/functions/esc_html/",
+			"https://developer.wordpress.org/reference/functions/esc_html__/",
+			"https://developer.wordpress.org/reference/functions/esc_html_e/",
+			"",
+			"https://developer.wordpress.org/reference/functions/esc_url/",
+			"$0",
+		],
+		"description": "Theme escaping."
+	},
+
+	"Prefixing": {
+		"prefix": "prefixing",
+		"body": [
+			"Provide a unique prefix for everything the Theme defines in the public namespace,",
+			"including options, functions, global variables, constants, post meta, etc.",
+			"Theme nav menu locations and sidebar IDs are exceptions.",
+			"(Suggested: Function names like XXX are not unique enough. The recommended prefix is the theme slug.)",
+			"(Placeholder: include additional information)",
+			"$0",
+		],
+		"description": "Prefixing for classes, functions and variables."
+	},
+
+	"Missing translation functions": {
+		"prefix": "missing translation functions",
+		"body": [
+			"All theme text strings are to be translatable.",
+			"There is text in the theme that is missing translation functions.",
+			"",
+			"Unfortunately there is no tool or plugin that can help you find these strings.",
+			"You will need to look through all of your files manually.",
+			"(Placeholder: include the file name, line number and details here)",
+			"$0",
+		],
+		"description": "Missing translation functions."
+	},
+
+	"Content creation": {
+		"prefix": "content creation",
+		"body": [
+			"The theme options should not be pseudo custom post types and save non-trivial user data.",
+			"(Suggested: Only minor content creation is allowed. Always use existing content like post and pages when possible.)",
+			"$0",
+		],
+		"description": "Content creation."
+	},
+
+	"Plugin territory": {
+		"prefix": "plugin territory",
+		"body": [
+			"Non design related functionality is not allowed. The following is plugin territory and needs to be removed:",
+			"(Placeholder: include additional information)",
+			"Read more: https://make.wordpress.org/themes/handbook/review/required/explanations-and-examples/#plugin-territory",
+			"$0",
+		],
+		"description": "Plugin territory."
+	},
+
+	"Requires plugin": {
+		"prefix": "requires plugin",
+		"body": [
+			"Themes cannot require plugins, only recommend.",
+			"For security reasons, themes can only install plugins (with TGMPA or other functionality) that are in the WordPress.org plugin directory.",
+			"Reference: https://make.wordpress.org/themes/handbook/review/required/#plugins",
+			"$0",
+		],
+		"description": "Themes cannot require plugins."
+	},
+
+	"Minified files": {
+		"prefix": "minified files",
+		"body": [
+			"No minification of scripts or files unless you provide original files.",
+			"Themes can use minified files, but they also need to include the original, non minified version.",
+			"(Placeholder: include additional information like a script name)",
+			"$0",
+		],
+		"description": "Missing non minified versions of files that are minified."
+	},
+
+	"Core-bundled scripts": {
+		"prefix": "core scripts",
+		"body": [
+			"Themes are required to use core-bundled scripts rather than including their own version of that script.",
+			"For example jQuery and Masonry",
+			"See: https://developer.wordpress.org/reference/functions/wp_enqueue_script/",
+			"$0",
+		],
+		"description": "Use Core-bundled scripts."
+	},
+
+	"Hard coded scripts": {
+		"prefix": "hard coded scripts",
+		"body": [
+			"Scripts and styles must be enqueued, not hard coded.",
+			"Exceptions can only be made for smaller scripts, to reduce loading times.",
+			"$0",
+		],
+		"description": "Enqueue scripts and styles."
+	},
+
+	"Remote files": {
+		"prefix": "remote files",
+		"body": [
+			"Themes are required to include all scripts and resources it uses rather than hotlinking.",
+			"Using a CDN or similar is not allowed, all resources need to be in the theme folder.",
+			"The only exception to this is Google Fonts.",
+			"$0",
+		],
+		"description": "Including remote files."
+	},
+
+	"Footer copyright": {
+		"prefix": "footer copyright",
+		"body": [
+			"Any copyright statements on the front end should display the user’s copyright, not the theme author’s copyright.",
+			"$0",
+		],
+		"description": "Front faceing copyright text is wrong."
+	},
+
+	"Non GPL": {
+		"prefix": "non GPL",
+		"body": [
+			"If you are a theme shop you should be selling under GPL to be in the WordPress.org theme directory.",
+			"It does not make a difference if the theme is free, commercial, submitted to WordPress.org or provided elsewhere",
+			"all your themes must be 100% GPL compatible.",
+			"",
+			"Example: If you have a Themeforest account and you’re selling themes on it, all those themes need to state on their sales page that they are 100% GPL compatible.",
+			"See https://help.market.envato.com/hc/en-us/articles/202501194-Theme-Plugin-Licensing-Options",
+			"",
+			"Your site needs to state explicitly that the products you’re selling are GPL compatible.",
+			"It needs to be in an easy-to-find place for the reviewer and customers.",
+			"$0",
+		],
+		"description": "Themes that are not compatible with GPL."
+	},
+
+	"Wrong Screenshot": {
+		"prefix": "screenshot",
+		"body": [
+			"The screenshot should be a reasonable representation of what the theme can look like.",
+			"The screenshot should not be a logo or mockup.",
+			"Screenshots are only allowed to display dummy text that doesn’t suggest or describe theme features,",
+			"functionality, or statistics. If it looks like an AD, then it’s not allowed.",
+			"$0",
+		],
+		"description": "Wrong Screenshot."
+	},
+
+	"Reset query": {
+		"prefix": "reset query",
+		"body": [
+			"All custom queries need to be reset.",
+			"$0",
+		],
+		"description": "Reset queries."
+	},
+
+	"Theme URI": {
+		"prefix": "theme uri",
+		"body": [
+			"Theme URI is invalid.",
+			"(Suggested: If the URI is a demo site, the content must be about the theme itself and not test data.)",
+			"Author URI is invalid.",
+			"$0",
+		],
+		"description": "wrong theme and author links."
+	},
+
+	"Not approved": {
+		"prefix": "not approved",
+		"body": [
+			"Hi",
+			"I have had a quick look at the theme and at this point, it does not follow the requirements.",
+			"",
+			"The Theme Review Team does not hard reject themes, -we want you to resubmit your theme,",
+			"but we need you to read the requirements more carefully.",
+			"",
+			"When a ticket is closed as not approved, it looses it's position in the review queue.",
+			"When the update is submitted, a new ticket is created at the end of the queue.",
+			"",
+			"Follow-up reviews are done when time permits (and if the review queue is short enough),",
+			"you do not need to ping me when you submit your update.",
+			"-If I am not able to do a follow up review, the theme will still be fully reviewed once the theme reaches the top of the review queue.",
+			"",
+			"",
+			"https://make.wordpress.org/themes/handbook/review/required/",
+			"https://make.wordpress.org/themes/handbook/review/how-to-do-a-review-draft/",
+			"https://github.com/WPTRT/theme-sniffer/",
+			"Use this upload form to submit your update: https://wordpress.org/themes/upload/",
+			"",
+			"----",
+			"$0",
+			],
+		"description": "Not approved."
+	},
+
+	"Customizer": {
+		"prefix": "customizer options not working",
+		"body": [
+			"All options that are available in the customizer must work",
+			"",
+			"(Suggested: Display Site Title and Tagline in the customizer is not working. The text is meant to be hidden when the box is unchecked.)",
+			"(Suggested: The Header Text Color option in the customizer is not working.)",
+			"(Suggested: The Header Image option in the customizer is not working, or I can't see where the image is used.)",
+			"(Suggested: When a static page is selected for the Homepage, it needs to show the content and title of that page.)",
+			"$0",
+		],
+		"description": "Customizer options are not working."
+	},
+
+	"Sniffer": {
+		"prefix": "sniffer",
+		"body": [
+			"Test your theme with the following plugin:",
+			"https://wordpress.org/plugins/theme-sniffer/",
+			"",
+			"Errors and warnings need to be manually checked.",
+			"Not all errors listed by the plugin are required to be fixed, but many of them can help you follow the WordPress Coding Standards and best practices.",
+			"$0",
+		],
+		"description": "Theme Sniffer plugin."
+	},
+
+	"Dispay Site Title": {
+		"prefix": "display site title",
+		"body": [
+			"The Display Site Title and Tagline option in the customizer is not working.",
+			"The text is meant to be hidden when the box is unchecked.",
+			"",
+			"$0",
+		],
+		"description": "Display Site Title."
+	},
+
+	"Avoid wp_title": {
+		"prefix": "Avoid wp_title",
+		"body": [
+			"Avoid using wp_title().",
+			"It was only meant to the be used to display the title in the <title> tag.",
+			"It was meant to be deprecated many versions ago, but it was not possible",
+			"because theme and plugin authors used it in ways that were not intended.",
+			"See https: //wordpress.slack.com/messages/C02RP4Y3K/ ",
+			"",
+			"$0",
+		],
+		"description": "Display Site Title."
+	}
+
+}
